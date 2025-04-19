@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Facundo</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- AOS Animaciones scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
+  <body>
+    <!-- PARTICLES -->
+    <div id="particles-js"></div>
+    <!-- HERO con slider -->
+    <header class="hero">
+      <div class="slider-container">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <div
+            class="slide-bg"
+            style="background-image: url('assets/slider2.png')"
+          ></div>
+
+          <div class="slide-content">
+            <h1>Hola, soy <span class="highlight">Facundo</span></h1>
+            <h2>Desarrollador Web Frontend</h2>
+            <p>
+              Construyo sitios modernos y responsivos con HTML, CSS y
+              JavaScript.
+            </p>
+            <div class="cta-visual" onclick="scrollToContact()">
+              <i class="fa-solid fa-magnifying-glass"></i> ¡Descubrí cómo puedo
+              ayudarte!
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div
+            class="slide-bg"
+            style="background-image: url('assets/slider1.png')"
+          ></div>
+          <div class="slide-content">
+            <h1>¿Necesitás una web?</h1>
+            <p>
+              Estoy listo para transformar tu idea en un sitio moderno y
+              funcional.
+            </p>
+            <div class="cta-visual" onclick="scrollToContact()">
+              <i class="fa-solid fa-gear"></i> ¡Vamos a trabajar juntos!
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles del slider -->
+        <div class="slider-controls">
+          <div class="arrow left" onclick="prevSlide()">❮</div>
+          <div class="dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+          </div>
+          <div class="arrow right" onclick="nextSlide()">❯</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SOBRE MÍ -->
+    <section class="about" data-aos="fade-up" id="about">
+      <div class="container">
+        <h3>Sobre mí</h3>
+        <p>
+          Soy técnico superior en desarrollo de software. Me especializo en
+          crear páginas web estáticas, limpias y modernas. Siempre busco nuevos
+          desafíos que me permitan seguir creciendo como desarrollador y aportar
+          soluciones creativas.
+        </p>
+
+        <!-- Habilidades -->
+        <div class="skills">
+          <span style="--delay: 0s">HTML5</span>
+          <span style="--delay: 0.2s">CSS3</span>
+          <span style="--delay: 0.4s">JavaScript</span>
+          <span style="--delay: 0.6s">Responsive Design</span>
+          <span style="--delay: 0.8s">Git</span>
+          <span style="--delay: 1s">VSCode</span>
+        </div>
+
+        <!-- Barra de progreso de habilidades -->
+        <div class="skills-bar">
+          <div class="skill">
+            <h4>HTML5</h4>
+            <div class="progress-bar" data-progress="90"></div>
+          </div>
+          <div class="skill">
+            <h4>CSS3</h4>
+            <div class="progress-bar" data-progress="80"></div>
+          </div>
+          <div class="skill">
+            <h4>JavaScript</h4>
+            <div class="progress-bar" data-progress="70"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto" data-aos="fade-up">
+      <div class="container">
+        <h3>Contacto</h3>
+        <p>¿Querés trabajar conmigo o tenés alguna consulta? Escribime:</p>
+        <p><strong>Redes:</strong></p>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/facundo-lopez-bb6444238/"
+            target="_blank"
+            class="social-icon"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            href="https://github.com/fxcu"
+            target="_blank"
+            class="social-icon"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+
+          <a
+            href="mailto:facundolmlopez@gmail.com"
+            class="social-icon"
+            aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+
+          <a
+            href="https://wa.me/5493537588857"
+            target="_blank"
+            class="social-icon"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-wrapper">
+        <p class="footer-copy">
+          © 2025 Facundo | Web Developer — Powered by HTML, CSS, JavaScript y café ☕
+        </p>
+      </div>
+    </footer>
+
+    <!-- Particles.js Initialization -->
+    <script>
+    particlesJS("particles-js",{particles:{number:{value:75,density:{enable:!0,value_area:800}},color:{value:"#ffffff"},shape:{type:"circle"},opacity:{value:.5,random:!0},size:{value:3,random:!0},line_linked:{enable:!0,distance:150,color:"#ffffff",opacity:.4,width:1},move:{enable:!0,speed:2.5,out_mode:"out"}},interactivity:{detect_on:"window",events:{onhover:{enable:!0,mode:"repulse"},onclick:{enable:!0,mode:"push"}}},retina_detect:!0});
+    </script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+    
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
